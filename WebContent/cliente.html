@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+
+function salvar(){
+	//Acessa o nome digitado
+	var id =  document.getElementById("id").value;
+	var nome =  document.getElementById("nome").value;
+	//Cria um objeto Ajax
+	var xhttp = new XMLHttpRequest();
+
+	//Configuração da requisição	
+	xhttp.open("POST", "cliente", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+	//Dados dos form
+	xhttp.send("id="+id+"&nome="+nome);
+	
+}
+
+</script>
+</head>
+<body>
+
+<form>
+
+	<input type="text" name="id" id="id" readonly="readonly" />
+	<input type="text" name="nome" id="nome" />
+	<input type="button" value="Salvar" onclick="salvar()" >
+
+</form>
+
+</body>
+</html>
